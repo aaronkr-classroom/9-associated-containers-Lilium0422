@@ -7,6 +7,7 @@
 #include <string>
 #include "split.h"
 #include <map>
+#include <fstream>
 
 using namespace std;
 
@@ -24,8 +25,10 @@ Grammar read_grammar(istream& in) {
 	Grammar ret;
 	string line;
 
+	ifstream grammer_file("grammar-input.txt"); //에런
+
 	//입력 데이터를 읽음.
-	while (getline(in, line)) {
+	while (getline(grammer_file, line)) {
 		//입력 데이터를 단어로 나눔.
 		vector<string> entry = split(line);
 		if (!entry.empty())
